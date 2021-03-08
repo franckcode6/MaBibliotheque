@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma Biliothèque
+{% endblock %}
+
+{% block body %}
+<table>
+    <tr>
+        <th>Identifiant</th>
+        <th>Nom</th>
+    </tr>
+    {% for author in authors %}
+    <tr>
+        <td>
+            {{ author.id }}
+        </td>
+        <td>
+            {{ author.name }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

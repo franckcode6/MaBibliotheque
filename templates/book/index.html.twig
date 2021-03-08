@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma Bibliothèque
+{% endblock %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>Identifiant</th>
+            <th>Titre</th>
+            <th>Année</th>
+            <th>Editeur</th>
+            <th>Auteur</th>
+        </tr>
+        {% for book in books %}
+            <tr>
+                <td>
+                    {{ book.id }}
+                </td>
+                <td>
+                    {{ book.title }}
+                </td>
+                <td>
+                    {{ book.year }}
+                </td>
+                <td>
+                    {{ book.publisher }}
+                </td>
+                <td>
+                    {{ book.author }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
