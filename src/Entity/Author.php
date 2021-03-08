@@ -29,6 +29,7 @@ class Author
      * @ORM\Column(type="string", length=128)
      * @Groups({"author:write"})
      * @Groups({"author:read"})
+     * @Groups({"book:read"})
      */
     private $name;
 
