@@ -1,5 +1,5 @@
 # MaBibliotheque
-Création d'une api via API Platform.  
+Création d'une api via API Platform et Symfony.  
 
 La doc : https://api-platform.com/docs/distribution/#using-symfony-and-composer  
 
