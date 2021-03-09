@@ -10,11 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ORM\Entity(repositoryClass=AuthorRepository::class)
  * @ApiResource(
  *     normalizationContext={"groups"={"author:read"}},
  *     denormalizationContext={"groups"={"author:write"}}
  * )
- * @ORM\Entity(repositoryClass=AuthorRepository::class)
  */
 class Author
 {
