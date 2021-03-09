@@ -35,12 +35,12 @@ class Book
     private $title;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="smallint")
      * @Assert\NotBlank()
      * @Groups({"book:write"})
      * @Groups({"book:read"})
      */
-    private $year;
+    private $publishingDate;
 
     /**
      * @ORM\Column(type="string", length=128, nullable=true)
@@ -56,6 +56,17 @@ class Book
      * @Groups({"book:read"})
      */
     private $author;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ISBN;
+
+    /**
+     * @ORM\Column(type="string", length=128, nullable=true)
+     */
+    private $genre;
+
 
     public function getId(): ?int
     {
@@ -106,6 +117,42 @@ class Book
     public function setAuthor(?Author $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getISBN(): ?int
+    {
+        return $this->ISBN;
+    }
+
+    public function setISBN(?int $ISBN): self
+    {
+        $this->ISBN = $ISBN;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?string $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getPublishingDate(): ?int
+    {
+        return $this->publishingDate;
+    }
+
+    public function setPublishingDate(int $publishingDate): self
+    {
+        $this->publishingDate = $publishingDate;
 
         return $this;
     }
