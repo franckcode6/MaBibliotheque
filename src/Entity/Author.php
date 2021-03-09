@@ -48,16 +48,17 @@ class Author
     private $nationality;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
+     * @Groups({"author:write"})
+     * @Groups({"author:read"})
      */
-    
     private $description;
+
     /**
      * @ORM\OneToMany(targetEntity=Book::class, mappedBy="author")
      * @Groups({"author:read"})
      */
     private $books;
-
 
 
     public function __construct()

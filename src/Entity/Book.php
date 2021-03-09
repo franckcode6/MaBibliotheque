@@ -59,11 +59,15 @@ class Book
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"book:write"})
+     * @Groups({"book:read"})
      */
     private $ISBN;
 
     /**
      * @ORM\Column(type="string", length=128, nullable=true)
+     * @Groups({"book:write"})
+     * @Groups({"book:read"})
      */
     private $genre;
 
