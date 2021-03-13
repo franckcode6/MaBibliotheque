@@ -89,18 +89,6 @@ class Book
         return $this;
     }
 
-    public function getYear(): ?int
-    {
-        return $this->year;
-    }
-
-    public function setYear(int $year): self
-    {
-        $this->year = $year;
-
-        return $this;
-    }
-
     public function getPublisher(): ?string
     {
         return $this->publisher;
