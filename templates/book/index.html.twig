@@ -1,35 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ma Bibliothèque
+{% block title %}Liste des livres
 {% endblock %}
 
 {% block body %}
-    <table>
-        <tr>
-            <th>Identifiant</th>
-            <th>Titre</th>
-            <th>Année</th>
-            <th>Editeur</th>
-            <th>Auteur</th>
-        </tr>
-        {% for book in books %}
+    <main class="container mt-5">
+
+        <table class="table">
+            <thead class="thead-dark">
             <tr>
-                <td>
-                    {{ book.id }}
-                </td>
-                <td>
-                    {{ book.title }}
-                </td>
-                <td>
-                    {{ book.year }}
-                </td>
-                <td>
-                    {{ book.publisher }}
-                </td>
-                <td>
-                    {{ book.author }}
-                </td>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Auteur</th>
+                <th scope="col">Editeur</th>
+                <th scope="col">Date de sortie</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Couverture</th>
             </tr>
-        {% endfor %}
-    </table>
+            </thead>
+
+            {% set i = 1 %}
+            {% for book in books %}
+                <tr>
+                    <td scope="row" class="align-middle">{{ i }}</td>
+                    <td class="align-middle">{{ book.title }}</td>
+                    <td class="align-middle">{{ book.author.name }}</td>
+                    <td class="align-middle">{{ book.publisher }}</td>
+                    <td class="align-middle">{{ book.publishingDate }}</td>
+                    <td class="align-middle">{{ book.iSBN }}</td>
+                    <td class="align-middle">{{ book.genre }}</td>
+                    <td class="align-middle"><img src="{{ book.imageCover }}" alt="Couverture du livre" class = "img-thumbnail"></td>
+                </tr>
+                {% set i = i + 1 %}
+
+            {% endfor %}
+        </table>
+    </main>
 {% endblock %}

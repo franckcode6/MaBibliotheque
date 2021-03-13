@@ -71,6 +71,13 @@ class Book
      */
     private $genre;
 
+    /**
+     * @ORM\Column(type="string", length=500, nullable=true)
+     * @Groups({"book:write"})
+     * @Groups({"book:read"})
+     */
+    private $imageCover;
+
 
     public function getId(): ?int
     {
@@ -85,18 +92,6 @@ class Book
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getYear(): ?int
-    {
-        return $this->year;
-    }
-
-    public function setYear(int $year): self
-    {
-        $this->year = $year;
 
         return $this;
     }
@@ -157,6 +152,18 @@ class Book
     public function setPublishingDate(int $publishingDate): self
     {
         $this->publishingDate = $publishingDate;
+
+        return $this;
+    }
+
+    public function getImageCover(): ?string
+    {
+        return $this->imageCover;
+    }
+
+    public function setImageCover(?string $imageCover): self
+    {
+        $this->imageCover = $imageCover;
 
         return $this;
     }
